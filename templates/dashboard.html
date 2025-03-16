@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Servizio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .logout-btn:hover {
+            background-color: #c9302c;
+        }
+
+        /* Service Layout */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-box {
+            width: 300px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .service-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Logout Button -->
+<a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+
+<div class="container">
+    <h2>Welcome, {{ username }}!</h2>
+
+    <!-- Services Section -->
+    <div class="services">
+        <div class="service-box">
+            <h3>Keyword Finder</h3>
+            <a href="{{ url_for('keyword_finder.keyword_finder') }}" class="service-btn">Go to Keyword Finder</a>
+        </div>
+		
+       <div class="service-box">
+            <h3>Text Summarizer</h3>
+            <a href="{{ url_for('text_summarizer.text_summarizer') }}" class="service-btn">Go to Text Summarizer</a>
+        </div>
+		
+		<div class="service-box">
+          <h3>Image Finder</h3>
+           <a href="{{ url_for('image_finder.image_finder') }}" class="service-btn">Go to Image Finder</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

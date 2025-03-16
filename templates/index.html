@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- S Animation (Full-Screen) -->
+<div class="animation-container">
+    <div class="s-animation">S</div>
+</div>
+
+<!-- Main Content (Initially Hidden) -->
+<div id="main-content" class="hidden">
+    <h1>Welcome to Servizio</h1>
+    <p>Securely sign up and log in using facial recognition.</p>
+
+    <!-- "Get Started" button leading to services -->
+    <a href="#services"><button>Get Started with Our Services</button></a>
+
+    <!-- Services Section with Animation -->
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="services-container">
+            <div class="service">
+                <h2>Face Authentication</h2>
+                <p>Securely sign up and log in using advanced facial recognition.</p>
+            </div>
+            <div class="service">
+                <h2>Keyword Finder</h2>
+                <p>Upload files, find keywords, and highlight their occurrences.</p>
+            </div>
+            <div class="service">
+                <h2>Text Summarizer</h2>
+                <p>Summarize large PDFs with AI-powered analysis.</p>
+            </div>
+            <div class="service">
+                <h2>Image Finder</h2>
+                <p>Search for relevant images based on your input and get dynamic results.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            document.querySelector(".animation-container").style.display = "none";
+            document.getElementById("main-content").classList.remove("hidden");
+        }, 2000); // Animation lasts 2 sec
+    });
+</script>
+
+{% endblock %}
+
+
+
+

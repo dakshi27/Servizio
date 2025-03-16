@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Finder</title>
+    <style>
+        /* Google-style clean design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        /* Card Layout */
+        .card {
+            display: flex;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Left (File Upload) */
+        .left {
+            flex: 1;
+            padding: 20px;
+            background: #f3f3f3;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Right (Results) */
+        .right {
+            flex: 1;
+            padding: 20px;
+            background: #eaeaea;
+            border-radius: 10px;
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        /* Input Fields */
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Keyword Finder</h1>
+
+    <div class="card">
+        <div class="left">
+            <h2>Upload a File</h2>
+            <form action="{{ url_for('keyword_finder.keyword_finder') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <input type="text" name="keyword" placeholder="Enter keyword" required>
+                <button type="submit">Find Keyword</button>
+            </form>
+        </div>
+
+        <div class="right">
+            <h2>Results</h2>
+            <ul>
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <a href="{{ url_for('dashboard') }}" class="back-btn">← Back to Dashboard</a>
+</div>
+
+</body>
+</html>

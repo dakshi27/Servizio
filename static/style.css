@@ -1,0 +1,375 @@
+/* General Styles */
+body {
+    
+	/*background-color: #f2f0ef;
+background-image: linear-gradient(315deg, #f2f0ef 0%, #fbceb1 74%);
+*/
+
+    background: linear-gradient(to right, #6a5acd, #87ceeb); /* Creates depth */
+
+
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Navbar */
+.navbar-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.navbar-container nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.navbar-container nav ul li {
+    display: inline;
+}
+
+.navbar-container nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-container nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Form Styling */
+form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+    width: 300px;
+}
+
+/* Input Fields */
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Checkboxes */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔';
+    position: absolute;
+    font-size: 14px;
+    top: 2px;
+    left: 4px;
+    color: #333;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Services Section */
+#services {
+    text-align: center;
+    padding: 50px 20px;
+    background: white; /* White background for 'Our Services' */
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* Service Title */
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Service List */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* Individual Service Box with Unique Gradient Backgrounds */
+#services .service:nth-child(1) {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Soft Pink to Peach */
+}
+
+#services .service:nth-child(2) {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Purple-Pink to Light Blue */
+}
+
+#services .service:nth-child(3) {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Sky Blue to Soft Cyan */
+}
+
+#services .service:nth-child(4) {
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%); /* Light Rose to Blush Red */
+}
+
+/* Common Service Box Styles */
+.service {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease-in-out, opacity 0.6s ease-out;
+    
+    /* Animation Defaults */
+    opacity: 0;  
+    transform: translateY(50px);
+}
+
+/* Show Animation */
+.service.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effect */
+.service:hover {
+    transform: scale(1.05);
+}
+
+/* Service Headings */
+.service h3 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* Service Text */
+.service p {
+    font-size: 1rem;
+    color: #222;
+}
+
+/* Button Styling */
+button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Fullscreen animation background */
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black; /* Dark background like Netflix */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* "S" animation wrapper */
+.s-wrapper {
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 0.5s;
+}
+
+/* "S" animation effect */
+.s {
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glitch 1.8s infinite alternate;
+}
+
+/* Glitch effect like Netflix */
+@keyframes glitch {
+    0% { transform: skew(0deg); }
+    20% { transform: skew(-10deg); }
+    40% { transform: skew(10deg); }
+    60% { transform: skew(-5deg); }
+    80% { transform: skew(5deg); }
+    100% { transform: skew(0deg); }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+
+
+
+
+
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeOut 1.5s ease-out 2.5s forwards; /* Fades out after 2.5s */
+}
+
+/* The "S" Animation */
+.s-animation {
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    animation: scaleUp 1.5s ease-in-out;
+}
+
+/* Gradient Strips */
+.s-animation::before,
+.s-animation::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 300%;
+    top: -100%;
+    left: -25%;
+    background: linear-gradient(45deg, #ff6b6b, #ff4757, #1e90ff, #3742fa);
+    opacity: 0.6;
+    transform: rotate(25deg);
+    animation: moveStripes 2s linear infinite;
+}
+
+.s-animation::after {
+    animation-delay: 0.5s;
+}
+
+/* Animation Effects */
+@keyframes scaleUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes moveStripes {
+    0% { transform: translateY(-50%) rotate(25deg); }
+    100% { transform: translateY(50%) rotate(25deg); }
+}
+
+/* Hide content initially */
+.hidden {
+    display: none;
+}
+
+/* Animation Screen */
+.animation-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.s-animation {
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
